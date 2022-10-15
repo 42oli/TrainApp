@@ -10,12 +10,12 @@ public class Gymnast extends Person {
     private final SortedSet<Element> masteredElements;
     private final SortedSet<Element> currentlyTraining;
 
-    public Gymnast(String name, LocalDate birthDay) {
-        this(name, birthDay, new TreeSet<>(), new TreeSet<>());
+    public Gymnast(String name, LocalDate birthDay, Sex sex) {
+        this(name, birthDay, sex, new TreeSet<>(), new TreeSet<>());
     }
 
-    public Gymnast(String name, LocalDate birthDay, SortedSet<Element> masteredElements, SortedSet<Element> currentlyTraining) {
-        super(name, birthDay);
+    public Gymnast(String name, LocalDate birthDay, Sex sex, SortedSet<Element> masteredElements, SortedSet<Element> currentlyTraining) {
+        super(name, birthDay, sex);
         this.masteredElements = masteredElements;
         this.currentlyTraining = currentlyTraining;
     }

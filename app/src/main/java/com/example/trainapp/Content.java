@@ -29,9 +29,9 @@ public class Content {
         stuffOliCan.add(full);
         TreeSet<Element> stuffOliTrains = new TreeSet<>();
         stuffOliTrains.add(fullFull);
-        PEOPLE.add(new Gymnast("Oli", LocalDate.of(1996, Month.SEPTEMBER.getValue(), 12), stuffOliCan, stuffOliTrains));
-        PEOPLE.add(new Gymnast("Silvan", LocalDate.of(2000, Month.SEPTEMBER.getValue(), 2), new TreeSet<>(Arrays.asList(halfInFlieger, full, fullFull)), Collections.emptySortedSet()));
-        PEOPLE.add(new Person("Andrea", LocalDate.of(1993, Month.AUGUST.getValue(), 16))); // glaub..
+        PEOPLE.add(new Gymnast("Oli", LocalDate.of(1996, Month.SEPTEMBER.getValue(), 12), Person.Sex.MALE, stuffOliCan, stuffOliTrains));
+        PEOPLE.add(new Gymnast("Silvan", LocalDate.of(2000, Month.SEPTEMBER.getValue(), 2), Person.Sex.MALE, new TreeSet<>(Arrays.asList(halfInFlieger, full, fullFull)), Collections.emptySortedSet()));
+        PEOPLE.add(new Person("Andrea", LocalDate.of(1993, Month.AUGUST.getValue(), 16), Person.Sex.FEMALE)); // glaub..
         PEOPLE.forEach(p -> PERSON_MAP.put(p.getName(), p));
     }
 
