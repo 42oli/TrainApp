@@ -15,8 +15,14 @@ import java.util.TreeSet;
 public class Content {
     // TODO: access to full list etc.
     // this is just a dummy implementation
-    public static ElementService elementService = new ServiceDevImpl();
-    public static PersonService personService = (PersonService) elementService;
-    public static final Map<String, Person> PERSON_MAP = ServiceDevImpl.PERSON_MAP;
+    public ElementService elementService;
+    public PersonService personService;
+    public Map<String, Person> PERSON_MAP;
 
+    public Content() {
+        ServiceDevImpl service = new ServiceDevImpl();
+        elementService = service;
+        personService = (PersonService) elementService;
+        PERSON_MAP = service.PERSON_MAP;
+    }
 }

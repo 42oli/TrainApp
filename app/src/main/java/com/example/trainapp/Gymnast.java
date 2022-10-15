@@ -34,7 +34,7 @@ public class Gymnast extends Person {
                 + currentlyTraining.stream().map(e -> e.getElementNameEn()).collect(Collectors.joining("\n"))
                 + "\nAlready mastered:\n"
                 + masteredElements.stream().map(e -> e.getElementNameEn()).collect(Collectors.joining("\n"))
-                + "\n"
+                + "\n\n"
                 + super.getContent();
     }
 }

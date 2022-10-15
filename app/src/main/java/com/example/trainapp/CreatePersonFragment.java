@@ -54,7 +54,7 @@ public class CreatePersonFragment extends BottomSheetDialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         final RecyclerView recyclerView = (RecyclerView) view;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new PersonAdapter(getArguments().getInt(ARG_ITEM_COUNT)));
+        recyclerView.setAdapter(new PersonAdapter(getArguments() == null ? 0 : getArguments().getInt(ARG_ITEM_COUNT)));
     }
 
     @Override

@@ -22,9 +22,9 @@ public class ServiceDevImpl implements ElementService, PersonService {
         Element halfInFlieger = new Element();
         halfInFlieger.setElementNameEn("1/2 in 3/4 rw A");
         Element full = new Element();
-        halfInFlieger.setElementNameEn("Full");
+        full.setElementNameEn("Full");
         Element fullFull = new Element();
-        halfInFlieger.setElementNameEn("Full");
+        fullFull.setElementNameEn("FullFull");
         ELEMENTS.addAll(Arrays.asList(halfInFlieger, full, fullFull));
         TreeSet<Element> stuffOliCan = new TreeSet<>();
         stuffOliCan.add(halfInFlieger);

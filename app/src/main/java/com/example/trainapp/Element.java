@@ -8,7 +8,7 @@ public class Element implements Comparable<Element> {
         STRAIGHT, TUCK, PIKE, PUCK, STRADDLE
     }
     public enum LandingPos {
-        FEET, SEAT, FRONT, BACK
+        FEET, SEAT, FRONT, BACK, HANDS_AND_KNEES, FLAT_BACK
     }
 
     private int id;

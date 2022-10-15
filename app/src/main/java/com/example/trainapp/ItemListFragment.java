@@ -8,13 +8,13 @@ import android.os.Bundle;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +23,6 @@ import com.example.trainapp.databinding.ItemListContentBinding;
 
 import com.example.trainapp.placeholder.PlaceholderContent;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -65,8 +63,6 @@ public class ItemListFragment extends Fragment {
 
     private FragmentItemListBinding binding;
 
-    private Button addPerson;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentItemListBinding.inflate(inflater, container, false);
@@ -79,14 +75,11 @@ public class ItemListFragment extends Fragment {
 
         ViewCompat.addOnUnhandledKeyEventListener(view, unhandledKeyEventListenerCompat);
 
-        if (addPerson == null) {
-            addPerson = new Button(this.getContext());
-            addPerson.setOnClickListener(event -> {
-
-            });
-            addPerson.setText("Add");
-        }
-        view.addTouchables(new ArrayList<>(Arrays.asList((View) addPerson)));
+        view.findViewById(R.id.button_AddPerson).setOnClickListener(v -> {
+            System.out.println("Hello world");
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.action_addPerson);
+        });
 
         RecyclerView recyclerView = binding.itemList;
 
@@ -103,7 +96,7 @@ public class ItemListFragment extends Fragment {
     ) {
 
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(
-                Content.personService.getAllPeople(),
+                new Content().personService.getAllPeople(),
                 itemDetailFragmentContainer
         ));
     }

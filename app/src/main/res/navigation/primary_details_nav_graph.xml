@@ -8,13 +8,16 @@
     <fragment
         android:id="@+id/item_list_fragment"
         android:name="com.example.trainapp.ItemListFragment"
-        android:label="Personen">
+        android:label="Personen"
+        tools:layout="@layout/fragment_item_list">
         <action
             android:id="@+id/show_item_detail"
             app:destination="@id/item_detail_fragment" />
         <action
-            android:id="@+id/addPerson"
-            app:destination="@id/createPersonFragment" />
+            android:id="@+id/action_addPerson"
+            app:destination="@id/create_person_fragment"
+            android:parentActivityName="com.example.trainapp.ItemDetailHostActivity"
+            app:launchSingleTop="true"/>
     </fragment>
     <fragment
         android:id="@+id/item_detail_fragment"
@@ -27,7 +30,7 @@
             app:argType="string" />
     </fragment>
     <dialog
-        android:id="@+id/createPersonFragment"
+        android:id="@+id/create_person_fragment"
         android:name="com.example.trainapp.CreatePersonFragment"
         android:label="fragment_create_person_list_dialog"
         tools:layout="@layout/fragment_create_person_list_dialog" />

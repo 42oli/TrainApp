@@ -33,11 +33,12 @@ public class ItemDetailFragment extends Fragment {
     private Person mItem;
     private CollapsingToolbarLayout mToolbarLayout;
     private TextView mTextView;
+    private Content content = new Content();
 
     private final View.OnDragListener dragListener = (v, event) -> {
         if (event.getAction() == DragEvent.ACTION_DROP) {
             ClipData.Item clipDataItem = event.getClipData().getItemAt(0);
-            mItem = Content.PERSON_MAP.get(clipDataItem.getText().toString());
+            mItem = content.PERSON_MAP.get(clipDataItem.getText().toString());
             updateContent();
         }
         return true;
@@ -59,7 +60,7 @@ public class ItemDetailFragment extends Fragment {
             // Load the placeholder content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = Content.PERSON_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = content.PERSON_MAP.get(getArguments().getString(ARG_ITEM_ID));
         }
     }
 
