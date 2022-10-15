@@ -103,7 +103,7 @@ public class ItemListFragment extends Fragment {
     ) {
 
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(
-                Content.PEOPLE,
+                Content.personService.getAllPeople(),
                 itemDetailFragmentContainer
         ));
     }
@@ -141,7 +141,7 @@ public class ItemListFragment extends Fragment {
             Person p = mValues.get(position);
             String details;
             if (p instanceof Gymnast) {
-                details = ((Gymnast) p).getCurrentlyTraining().stream().map(e -> e.getName()).collect(Collectors.joining("\n"));
+                details = ((Gymnast) p).getCurrentlyTraining().stream().map(e -> e.getElementNameEn()).collect(Collectors.joining("\n"));
                 if (details.isEmpty()) {
                     details = "A LAZY FUCK !!";
                 }

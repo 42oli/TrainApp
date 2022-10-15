@@ -31,9 +31,9 @@ public class Gymnast extends Person {
     @Override
     public String getContent() {
         return "Currently training on:\n"
-                + currentlyTraining.stream().map(e -> e.getName()).collect(Collectors.joining("\n"))
+                + currentlyTraining.stream().map(e -> e.getElementNameEn()).collect(Collectors.joining("\n"))
                 + "\nAlready mastered:\n"
-                + masteredElements.stream().map(e -> e.getName()).collect(Collectors.joining("\n"))
+                + masteredElements.stream().map(e -> e.getElementNameEn()).collect(Collectors.joining("\n"))
                 + "\n"
                 + super.getContent();
     }
